@@ -68,10 +68,10 @@ export default {
           this.error.password = '';
 
           if(this.email == ''){
-            this.error.email = 'email harus terisi'
+            this.error.email = 'Username/Email harus terisi'
           }
           if(this.password == ''){
-            this.error.password = 'password harus terisi'
+            this.error.password = 'Password harus terisi'
           }
         }
   },
