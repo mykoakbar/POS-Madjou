@@ -5,9 +5,9 @@
       <form class="mt-5" @submit="loginUser">
 
         <div class="form-group">
-          <p v-for="e in error" :key="e.id">{{ e }}</p>
           <label class="form-label" for="username">Username :</label>
           <input v-model="email" class="form-input" type="text" placeholder="masukkan username">
+          <div class="error-validation" v-if="error.email">{{ error.email }}</div>
         </div>
 
         <div class="form-group">
@@ -17,6 +17,7 @@
             <span v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
             <span v-else><b-icon icon="eye-fill"></b-icon></span>
           </button>
+          <div class="error-validation" v-if="error.password">{{ error.password }}</div>
         </div>
 
         <input type="submit" value="Login" class="btn btn-success">
@@ -36,7 +37,10 @@ export default {
       email:'',
       password: '',
       inputType: 'password',
-      error: []
+      error: {
+        email: '',
+        password:''
+      }
     }
   },
   methods: {
@@ -44,7 +48,7 @@ export default {
       this.inputType = this.inputType === "password" ? "text" : "password";
     },
 
-    async loginUser(e){
+    async loginUser(){
        let result = await axios.get(
           `http://localhost:3000/user?email=${this.email}&password=${this.password}`
           )
@@ -59,17 +63,16 @@ export default {
                       dismissible: true
               })
           }
-          this.error = [];
-          if(this.email && this.password){
-            return true;
-          } if (this.email === "") {
-            this.error.push('username harus diisi');
-          }
-           if (this.password === "") {
-            this.error.push('password harus diisi');
-          }
 
-          e.preventDefault();
+          this.error.email = '';
+          this.error.password = '';
+
+          if(this.email == ''){
+            this.error.email = 'email harus terisi'
+          }
+          if(this.password == ''){
+            this.error.password = 'password harus terisi'
+          }
         }
   },
   mounted(){
@@ -82,5 +85,7 @@ export default {
 </script>
 
 <style>
-
+.error-validation{
+  color: red;
+}
 </style>
