@@ -5,14 +5,14 @@
       <form class="mt-5" @submit="loginUser">
 
         <div class="form-group">
-          <label class="form-label" for="username">Username :</label>
-          <input v-model="email" class="form-input" type="text" placeholder="masukkan username">
+          <label class="form-label" for="username">Nama Pengguna/Email :</label>
+          <input v-model="email" class="form-input" type="text" placeholder="Masukkan nama pengguna atau email">
           <div class="error-validation" v-if="error.email">{{ error.email }}</div>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="password">Password :</label>
-          <input :type="inputType" placeholder="masukkan password" v-model="password">
+          <label class="form-label" for="password">Kata sandi :</label>
+          <input :type="inputType" placeholder="Masukkan kata sandi" v-model="password">
           <button v-on:click="tampilSandi">
             <span v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
             <span v-else><b-icon icon="eye-fill"></b-icon></span>
@@ -56,7 +56,7 @@ export default {
             localStorage.setItem("user-info", JSON.stringify(result.data[0]))
             this.$router.push({name: 'DashboardView'})
           }else if(result.data.length==0 && this.email != '' && this.password != ''){
-            this.$toast.error('email dan kata sandi salah', {
+            this.$toast.error('Nama pengguna/email dan kata sandi anda salah', { 
                       type: 'error',
                       position: 'bottom-right',
                       duration: 3000,
@@ -68,10 +68,10 @@ export default {
           this.error.password = '';
 
           if(this.email == ''){
-            this.error.email = 'Username/Email harus terisi'
+            this.error.email = 'Kolom wajib diisi'
           }
           if(this.password == ''){
-            this.error.password = 'Password harus terisi'
+            this.error.password = 'Kolom wajib diisi'
           }
         }
   },
