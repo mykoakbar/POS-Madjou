@@ -13,14 +13,15 @@
         <div class="form-group">
           <label class="form-label" for="password">Kata sandi :</label>
           <input :type="inputType" placeholder="Masukkan kata sandi" v-model="password">
-          <button v-on:click="tampilSandi">
+          <a class="btn" v-on:click="tampilSandi">
             <span v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
-            <span v-else><b-icon icon="eye-fill"></b-icon></span>
-          </button>
+            <span class="text-success" v-else><b-icon icon="eye-fill"></b-icon></span>
+          </a>
           <div class="error-validation" v-if="error.password">{{ error.password }}</div>
         </div>
+        <router-link to="/resetPasswordView">Reset Password</router-link> <br>
 
-        <input type="submit" value="Login" class="btn btn-success">
+        <button type="submit" class="btn btn-success">Masuk</button>
 
       </form>
     </div>
@@ -50,7 +51,7 @@ export default {
 
     async loginUser(){
        let result = await axios.get(
-          `http://localhost:3000/user?email=${this.email}&password=${this.password}`
+          `http://localhost:3000/user?email=${this.email}&username=${this.email}&password=${this.password}`
           )
           if(result.status==200 && result.data.length>0){
             localStorage.setItem("user-info", JSON.stringify(result.data[0]))

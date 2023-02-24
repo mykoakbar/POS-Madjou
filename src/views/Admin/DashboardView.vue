@@ -17,7 +17,7 @@ methods: {
   logout(){
     localStorage.clear();
     this.$router.push({name:"LoginView"})
-    this.$toast.error('berhasil logout', {
+    this.$toast.error('Anda Berhasil Keluar', {
                         type: 'success',
                         position: 'bottom-right',
                         duration: 3000,
