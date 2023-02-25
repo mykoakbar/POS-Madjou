@@ -5,7 +5,7 @@
       <div class="btn">
         <button v-on:click="logout" class="btn btn-danger">Logout</button>
       </div>
-      <router-link to="/cobaView">coba</router-link>
+      <router-link to="/Admin/cobaView">coba</router-link>
     </div>
   </div>
 </template>

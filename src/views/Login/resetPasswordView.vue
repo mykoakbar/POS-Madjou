@@ -3,9 +3,9 @@
     <div class="container">
       <h1>Lupa Kata Sandi</h1>
       <form @submit="cekEmail">
-        <input v-model="email" class="form-control" type="email" placeholder="Masukkan Email anda">
+        <b-form-input :state="error.stateEmail" v-model="email" class="form-control" type="email" placeholder="Masukkan Email anda"></b-form-input>
         <div class="error-validation" v-if="error.email">{{ error.email }}</div>
-        <div class="mt-2">
+        <div class="col-lg-5 mt-2">
           <router-link to="/"><a class="btn btn-danger">kembali</a></router-link>
           <button type="submit" class="btn btn-primary">Kirim</button>
         </div>
@@ -23,6 +23,7 @@ export default {
       return{
         email: '',
         error: {
+          stateEmail: null,
           email: ''
         }
       }
@@ -33,12 +34,14 @@ export default {
   
           let result = await axios .get(`http://localhost:3000/user?email=${this.email}`)
           if(result.status==200 && result.data.length>0){
-            this.$router.push({name: 'verifikasiEmailView'})
+            this.$router.push({path: '/Login/verifikasiEmail/verifikasiEmailView'})
           } else if(result.status==200 && result.data.length==0 && this.email != ''){
+            this.error.stateEmail = false;
             this.error.email = 'Email anda salah, mohon periksa kembali'
           }
           if(this.email == ''){
             this.error.email = 'Kolom wajib diisi'
+            this.error.stateEmail = false;
           }
         }
       }
