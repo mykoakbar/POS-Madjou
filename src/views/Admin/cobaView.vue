@@ -1,13 +1,16 @@
 <template>
     <div class="coba">
-        <div>
-            <label></label>
-            <input :type="show ? 'text' : 'password'" id="password" v-model="password"/>
-            <div class="eyeButton">
-            <span @mousedown="show = !show" @mouseup="show = !show" @touchstart="show = !show" @touchend="show = !show" style="cursor: pointer;"><b-icon icon="eye-slash-fill"></b-icon></span>
+        <div class="container">
+        <h1>Lupa Kata Sandi</h1>
+        <form @submit="cekEmail">
+            <b-form-input :state="error.stateEmail" v-model="email" class="form-control" type="email" placeholder="Masukkan Email anda"></b-form-input>
+            <div class="error-validation" v-if="error.email">{{ error.email }}</div>
+            <div class="col-lg-5 mt-2">
+            <router-link to="/"><a class="btn btn-danger">kembali</a></router-link>
+            <button type="submit" class="btn btn-primary">Kirim</button>
             </div>
-            <small class="errorMessage" v-if="password.error">Password field is required.</small> 
-        </div>   
+        </form>
+        </div>
       </div>
 </template>
 
