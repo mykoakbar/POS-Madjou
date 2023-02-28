@@ -8,6 +8,7 @@ import 'vue-toast-notification/dist/theme-sugar.css';
 // Import Bootstrap and BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './assets/main.css'
 
 Vue.config.productionTip = false
 // Make BootstrapVue available throughout your project
