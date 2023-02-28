@@ -76,6 +76,9 @@ export default {
 </script>
 
 <style>
+.error-validation{
+  color: red;
+}
 .form-input1{
     width: 502px;
     height: 50px;
