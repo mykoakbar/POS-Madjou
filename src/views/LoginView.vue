@@ -11,19 +11,19 @@
       <div class="col g-0">
         <div class="rightside d-inline-flex align-items-center">
           <div class="container px-5">
-            <h1><strong>Masuk</strong></h1>
+            <h1><strong><center>Masuk</center></strong></h1>
             <p style="weight: 400; color: rgba(0, 0, 0, 0.3);">Masukkan Username atau Email dan Password <br> yang sudah terdaftar</p>
             <form>
                   <b-col sm="3">
                       <label class="ms-2">Username/Email</label>
                   </b-col>
-                  <b-form-input class="form-input my-2" v-model="email" type="text" :state="error.stateEmail" placeholder="masukkan Username atau Email"></b-form-input>
+                  <input class="form-input1 my-2" v-model="email" type="text" :state="error.stateEmail" placeholder="Masukkan Nama Pengguna atau Email">
                   <div class="text-danger" v-if="error.email">{{ error.email }}</div>
 
                   <b-col sm="3">
                       <label class="ms-2">Password</label>
                   </b-col>
-                  <b-form-input class="form-input my-2" v-model="password" :type="inputType" :state="error.statePass" placeholder="masukkan password"></b-form-input>
+                  <b-form-input class="form-input2 my-2" v-model="password" :type="inputType" :state="error.statePass" placeholder="Masukkan Kata Sandi"></b-form-input>
                   <div class="text-danger" v-if="error.password">{{ error.password }}</div>
                   <a class="btn" v-on:click="tampilSandi">
                       <span v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
@@ -36,7 +36,7 @@
                           <label class="form-check-label" for="flexSwitchCheck">Remember Me</label>
                       </div>
                       <div class="col text-end lupa-password">
-                        <router-link to="/Login/resetPasswordView"><a>Lupa Password?</a></router-link>
+                        <router-link to="/Login/resetPasswordView"><a>Lupa Kata Sandi?</a></router-link>
                       </div>
                   </div>
                   <div class="d-grid mt-4">
@@ -155,7 +155,12 @@ export default {
     width: 100%;
     height: 50px;
 }
-.form-input{
+.form-input1{
+    width: 502px;
+    height: 60px;
+    left: 792px;
+}
+.form-input2{
     width: 502px;
     height: 60px;
     left: 792px;
