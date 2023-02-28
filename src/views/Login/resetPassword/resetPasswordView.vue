@@ -15,8 +15,8 @@
                         <div class="my-4">
                             <div v-if="error.email" class="iconpengguna-resetPassword"><img src="assets/icon-pengguna.svg"></div>
                             <div v-else class="iconpengguna-resetPassword"><img src="assets/icon-profile.svg"></div>
-                            <label class="ms-2">Username/Email</label>
-                            <b-form-input :state="error.stateEmail" v-model="email" class="form-input1" type="email" placeholder="Masukkan Email anda"></b-form-input>
+                            <label class="ms-2">Nama Pengguna/Email</label>
+                            <b-form-input :state="error.stateEmail" v-model="email" class="form-input1" type="email" placeholder="Masukkan email anda"></b-form-input>
                             <div class="error-validation" v-if="error.email">{{ error.email }}</div>
                         </div>
                         <div class="d-grid mt-5">
