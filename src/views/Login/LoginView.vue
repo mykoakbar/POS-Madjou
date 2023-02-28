@@ -29,9 +29,9 @@
                   <div class="iconsandi"><img src="assets/icon-katasandi.svg" alt=""></div>
                   <b-form-input class="form-input2 my-2" v-model="password" :type="inputType" :state="error.statePass" placeholder="Masukkan Kata Sandi"></b-form-input>
                   <div class="text-danger" v-if="error.password">{{ error.password }}</div>
-                  <a class="btn" v-on:click="tampilSandi">
-                      <span v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
-                      <span style="color: #9B51E0" v-else><b-icon icon="eye-fill"></b-icon></span>
+                  <a v-on:click="tampilSandi">
+                      <span style="position: relative;left: 87.08%;right: 11.25%;top: 52.34%;bottom: 45.8%;" v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
+                      <span style="color: #9B51E0;position: relative;left: 87.08%;right: 11.25%;top: 52.34%;bottom: 45.8%;" v-else><b-icon icon="eye-fill"></b-icon></span>
                   </a>
 
                   <div class="row container">
@@ -177,12 +177,18 @@ export default {
   position: relative;
   top: 43px;
   left: 15px;
+  width: 5%;
 }
 
 .iconsandi{
   position: relative;
   top: 43px;
   left: 15px;
+  width: 5%;
+}
+
+.col-sm-3 {
+  margin-bottom: -1.5rem !important;
 }
 
 .lupa-password a{
