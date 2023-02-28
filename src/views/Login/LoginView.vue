@@ -11,18 +11,22 @@
       <div class="col g-0">
         <div class="rightside d-inline-flex align-items-center">
           <div class="container px-5">
-            <h1><strong><center>Masuk</center></strong></h1>
-            <p style="weight: 400; color: rgba(0, 0, 0, 0.3);">Masukkan Username atau Email dan Password <br> yang sudah terdaftar</p>
+            <h1><strong>Masuk</strong></h1>
+            <p style="weight: 400; color: #9F9F9F;">Masukkan Username atau Email dan Password <br> yang sudah terdaftar</p>
             <form>
                   <b-col sm="3">
-                      <label class="ms-2">Username/Email</label>
+                      <label class="ms-2">Nama Pengguna/Email</label>
                   </b-col>
-                  <input class="form-input1 my-2" v-model="email" type="text" :state="error.stateEmail" placeholder="Masukkan Nama Pengguna atau Email">
+                  
+                  <div class="iconpengguna"><img src="assets/icon-pengguna.svg" alt=""></div>
+                  <b-form-input class="form-input1 my-2" v-model="email" type="text" :state="error.stateEmail" placeholder="Masukkan Nama Pengguna atau Email"></b-form-input>
                   <div class="text-danger" v-if="error.email">{{ error.email }}</div>
 
                   <b-col sm="3">
-                      <label class="ms-2">Password</label>
+                      <label class="ms-2">Kata Sandi</label>
                   </b-col>
+
+                  <div class="iconsandi"><img src="assets/icon-katasandi.svg" alt=""></div>
                   <b-form-input class="form-input2 my-2" v-model="password" :type="inputType" :state="error.statePass" placeholder="Masukkan Kata Sandi"></b-form-input>
                   <div class="text-danger" v-if="error.password">{{ error.password }}</div>
                   <a class="btn" v-on:click="tampilSandi">
@@ -33,7 +37,7 @@
                   <div class="row container">
                       <div class="col form-check form-switch form-check">
                           <input class="form-check-input" type="checkbox" id="flexSwitchCheck">
-                          <label class="form-check-label" for="flexSwitchCheck">Remember Me</label>
+                          <label class="form-check-label" for="flexSwitchCheck">Ingat Saya</label>
                       </div>
                       <div class="col text-end lupa-password">
                         <router-link to="/Login/resetPassword/resetPasswordView"><a>Lupa Kata Sandi?</a></router-link>
@@ -157,14 +161,30 @@ export default {
 }
 .form-input1{
     width: 502px;
-    height: 60px;
+    height: 50px;
     left: 792px;
+    padding: 0.375rem 2.75rem !important;
 }
+
 .form-input2{
     width: 502px;
-    height: 60px;
+    height: 50px;
     left: 792px;
+    padding: 0.375rem 2.75rem !important;
 }
+
+.iconpengguna{
+  position: relative;
+  top: 43px;
+  left: 15px;
+}
+
+.iconsandi{
+  position: relative;
+  top: 43px;
+  left: 15px;
+}
+
 .lupa-password a{
     color: #9B51E0;
     text-decoration: none;
