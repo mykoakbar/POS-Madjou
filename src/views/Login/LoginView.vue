@@ -36,7 +36,7 @@
                           <label class="form-check-label" for="flexSwitchCheck">Remember Me</label>
                       </div>
                       <div class="col text-end lupa-password">
-                        <router-link to="/Login/resetPasswordView"><a>Lupa Password?</a></router-link>
+                        <router-link to="/Login/resetPassword/resetPasswordView"><a>Lupa Password?</a></router-link>
                       </div>
                   </div>
                   <div class="d-grid mt-4">
