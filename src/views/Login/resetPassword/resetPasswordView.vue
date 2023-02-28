@@ -17,7 +17,8 @@
                             <div v-else class="iconpengguna-resetPassword"><img src="assets/icon-profile.svg"></div>
                             <label class="ms-2">Nama Pengguna/Email</label>
                             <b-form-input :state="error.stateEmail" v-model="email" class="form-input1" type="email" placeholder="Masukkan email anda"></b-form-input>
-                            <div class="error-validation" v-if="error.email">{{ error.email }}</div>
+                            <div class="error-validation mt-1" v-if="error.email">{{ error.email }}</div>
+                            <div class="text-success mt-1" v-if="success.email"><b-icon icon="arrow-clockwise" animation="spin" font-scale="1"></b-icon> {{ success.email }}</div>
                         </div>
                         <div class="d-grid mt-5">
                             <button type="submit" class="button-primary">Kirim</button>
@@ -46,6 +47,9 @@ export default {
         error: {
           stateEmail: null,
           email: ''
+        },
+        success: {
+          email: ''
         }
       }
     },
@@ -55,7 +59,9 @@ export default {
   
           let result = await axios .get(`http://localhost:3000/user?email=${this.email}`)
           if(result.status==200 && result.data.length>0){
-            this.$router.push({path: '/Login/resetPassword/verifikasiEmail/verifikasiEmailView'})
+            setTimeout(() => { this.$router.push({ path: '/Login/resetPassword/verifikasiEmail/verifikasiEmailView'}) }, 2000)
+            this.success.email = 'Email anda benar'
+            this.error.stateEmail = true;
           } else if(result.status==200 && result.data.length==0 && this.email != ''){
             this.error.stateEmail = false;
             this.error.email = 'Email anda salah, mohon periksa kembali'
