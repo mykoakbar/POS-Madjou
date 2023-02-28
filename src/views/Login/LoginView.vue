@@ -36,7 +36,11 @@
                           <label class="form-check-label" for="flexSwitchCheck">Remember Me</label>
                       </div>
                       <div class="col text-end lupa-password">
+<<<<<<< HEAD:src/views/LoginView.vue
                         <router-link to="/Login/resetPasswordView"><a>Lupa Kata Sandi?</a></router-link>
+=======
+                        <router-link to="/Login/resetPassword/resetPasswordView"><a>Lupa Password?</a></router-link>
+>>>>>>> 956d75fd9f1383e3ba2d1d1910cbacb7b6b07db8:src/views/Login/LoginView.vue
                       </div>
                   </div>
                   <div class="d-grid mt-4">

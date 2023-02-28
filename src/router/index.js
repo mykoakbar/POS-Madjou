@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import LoginView from '../views/LoginView.vue'
+import LoginView from '../views/Login/LoginView.vue'
 import DashboardView from '../views/Admin/DashboardView.vue'
 import cobaView from '../views/Admin/cobaView.vue'
-import resetPasswordView from '../views/Login/resetPasswordView.vue'
-import sandiBaruView from '../views/Login/sandiBaru/sandiBaruView.vue'
-import verifikasiEmailView from '../views/Login/verifikasiEmail/verifikasiEmailView.vue'
+import resetPasswordView from '../views/Login/resetPassword/resetPasswordView.vue'
+import sandiBaruView from '../views/Login/resetPassword/sandiBaru/sandiBaruView.vue'
+import verifikasiEmailView from '../views/Login/resetPassword/verifikasiEmail/verifikasiEmailView.vue'
 
 Vue.use(VueRouter)
 
@@ -26,17 +26,17 @@ const routes = [
     component: cobaView
   },
   {
-    path: '/Login/resetPasswordView',
+    path: '/Login/resetPassword/resetPasswordView',
     name: 'resetPasswordView',
     component: resetPasswordView
   },
   {
-    path: '/Login/sandiBaru/sandiBaruView',
+    path: '/Login/resetPassword/sandiBaru/sandiBaruView',
     name: 'sandiBaruView',
     component: sandiBaruView
   },
   {
-    path: '/Login/verifikasiEmail/verifikasiEmailView',
+    path: '/Login/resetPassword/verifikasiEmail/verifikasiEmailView',
     name: 'verifikasiEmailView',
     component: verifikasiEmailView
   }
