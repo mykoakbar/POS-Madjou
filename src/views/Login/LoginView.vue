@@ -14,30 +14,32 @@
             <h1><strong>Masuk</strong></h1>
             <p style="weight: 400; color: #9F9F9F;">Masukkan Username atau Email dan Password <br> yang sudah terdaftar</p>
             <form>
-                  <b-col sm="3">
-                      <label class="ms-2">Nama Pengguna/Email</label>
-                  </b-col>
-                  
-                  <div class="iconpengguna"><img src="assets/icon-pengguna.svg" alt=""></div>
-                  <b-form-input class="form-input1 my-2" v-model="email" type="text" :state="error.stateEmail" placeholder="Masukkan Nama Pengguna atau Email"></b-form-input>
-                  <div class="text-danger" v-if="error.email">{{ error.email }}</div>
+                  <div class="usernma">
+                    <div v-if="error.email" class="iconpengguna"><img src="assets/icon-profile-error.svg" alt=""></div>
+                    <div v-else class="iconpengguna"><img src="assets/icon-profile.svg" alt=""></div>
+                    <label class="ms-2 mb-1">Nama Pengguna/Email</label>
+                    <b-form-input class="form-input1" v-model="email" type="text" :state="error.stateEmail" placeholder="Masukkan Nama Pengguna atau Email"></b-form-input>
+                    <div class="text-danger" v-if="error.email">{{ error.email }}</div>
+                  </div>
+  
+                  <div class="password">
+                    <div v-if="error.password" class="iconsandi"><img src="assets/icon-katasandi-error.svg" alt=""></div>
+                    <div v-else class="iconsandi"><img src="assets/icon-katasandi.svg" alt=""></div>
+                    <label class="ms-2 mb-1">Kata Sandi</label>
+                    <b-form-input class="form-input2" v-model="password" :type="inputType" :state="error.statePass" placeholder="Masukkan Kata Sandi"></b-form-input>
+                    <div class="text-danger" v-if="error.password">{{ error.password }}</div>
+                    <div class="icon-view">
+                      <a v-on:click="tampilSandi">
+                        <span style="color: #9F9F9F;position: relative;left: 87.08%;right: 11.25%;top: 52.34%;bottom: 45.8%;" v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
+                        <span style="color: #9B51E0;position: relative;left: 87.08%;right: 11.25%;top: 52.34%;bottom: 45.8%;" v-else><b-icon icon="eye-fill"></b-icon></span>
+                      </a>
+                    </div>
+                  </div>
 
-                  <b-col sm="3">
-                      <label class="ms-2">Kata Sandi</label>
-                  </b-col>
-
-                  <div class="iconsandi"><img src="assets/icon-katasandi.svg" alt=""></div>
-                  <b-form-input class="form-input2 my-2" v-model="password" :type="inputType" :state="error.statePass" placeholder="Masukkan Kata Sandi"></b-form-input>
-                  <div class="text-danger" v-if="error.password">{{ error.password }}</div>
-                  <a v-on:click="tampilSandi">
-                      <span style="position: relative;left: 87.08%;right: 11.25%;top: 52.34%;bottom: 45.8%;" v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
-                      <span style="color: #9B51E0;position: relative;left: 87.08%;right: 11.25%;top: 52.34%;bottom: 45.8%;" v-else><b-icon icon="eye-fill"></b-icon></span>
-                  </a>
-
-                  <div class="row container">
+                  <div class="row container" style="margin-top: -20px;">
                       <div class="col form-check form-switch form-check">
                           <input class="form-check-input" type="checkbox" id="flexSwitchCheck">
-                          <label class="form-check-label" for="flexSwitchCheck">Ingat Saya</label>
+                          <label class="form-check-label" for="flexSwitchCheck">Ingatkan Saya</label>
                       </div>
                       <div class="col text-end lupa-password">
                         <router-link to="/Login/resetPassword/resetPasswordView"><a>Lupa Kata Sandi?</a></router-link>
@@ -175,16 +177,22 @@ export default {
 
 .iconpengguna{
   position: relative;
-  top: 43px;
+  top: 63px;
   left: 15px;
   width: 5%;
 }
 
 .iconsandi{
   position: relative;
-  top: 43px;
+  top: 63px;
   left: 15px;
   width: 5%;
+}
+.icon-view{
+  position: relative;
+    top: -37px;
+    left: 503px;
+    width: 5%;
 }
 
 .col-sm-3 {

@@ -13,10 +13,10 @@
                     <p style="weight: 400; color: rgba(0, 0, 0, 0.3);">Jangan khawatir, kami akan mengirimkan instruksi reset</p>
                     <form @submit="cekEmail">
                         <div class="my-4">
-                            <div v-if="error.email" class="iconpengguna-resetPassword"><img src="assets/icon-pengguna.svg"></div>
+                            <div v-if="error.email" class="iconpengguna-resetPassword"><img src="assets/icon-profile-error.svg"></div>
                             <div v-else class="iconpengguna-resetPassword"><img src="assets/icon-profile.svg"></div>
                             <label class="ms-2">Nama Pengguna/Email</label>
-                            <b-form-input :state="error.stateEmail" v-model="email" class="form-input1" type="email" placeholder="Masukkan email anda"></b-form-input>
+                            <b-form-input :state="error.stateEmail" v-model="email" class="form-input1 my-1" type="email" placeholder="Masukkan email anda"></b-form-input>
                             <div class="error-validation mt-1" v-if="error.email">{{ error.email }}</div>
                             <div class="text-success mt-1" v-if="success.email"><b-icon icon="arrow-clockwise" animation="spin" font-scale="1"></b-icon> {{ success.email }}</div>
                         </div>
@@ -97,7 +97,7 @@ export default {
 }
 .iconpengguna-resetPassword{
   position: relative;
-  top: 60px;
+  top: 63px;
   left: 15px;
   width: 5%;
   color: rgba(0, 0, 0, 0.3);
