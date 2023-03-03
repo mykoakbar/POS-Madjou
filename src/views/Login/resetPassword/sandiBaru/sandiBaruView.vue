@@ -17,7 +17,13 @@
                         <label class="ms-2">Kata Sandi Baru</label>
                         <b-form-input :state="error.stateSandiBaru" class="form-input1" v-model="sandiBaru" :type="inputType1" placeholder="Masukkan Kata Sandi Baru"></b-form-input>
                         <div v-if="error.sandiBaru" class="error-validation mt-1">{{ error.sandiBaru }}</div>
-                        <div class="icon-viewBaru">
+                        <div v-if="error.sandiBaru" class="icon-viewBaru-error">
+                            <a v-on:click="tampilSandiBaru">
+                                <span style="color: #9F9F9F;" v-if="inputType1 == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
+                                <span style="color: #9B51E0;" v-else><b-icon icon="eye-fill"></b-icon></span>
+                            </a>
+                        </div>
+                        <div v-else class="icon-viewBaru">
                             <a v-on:click="tampilSandiBaru">
                                 <span style="color: #9F9F9F;" v-if="inputType1 == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
                                 <span style="color: #9B51E0;" v-else><b-icon icon="eye-fill"></b-icon></span>
@@ -29,7 +35,13 @@
                         <label class="ms-2">Konfirmasi Kata Sandi Baru</label>
                         <b-form-input :state="error.stateSandiKonfirmasi" class="form-input1" v-model="sandiKonfirmasi" :type="inputType2" placeholder="Konfirmasi Kata Sandi Baru"></b-form-input>
                         <div v-if="error.sandiKonfirmasi" class="error-validation mt-1">{{ error.sandiKonfirmasi }}</div>
-                        <div class="icon-viewKonfirmasi">
+                        <div v-if="error.sandiKonfirmasi" class="icon-viewKonfirmasi-error">
+                            <a v-on:click="tampilSandiKonfirmasi">
+                                <span style="color: #9F9F9F;" v-if="inputType2 == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
+                                <span style="color: #9B51E0;" v-else><b-icon icon="eye-fill"></b-icon></span>
+                            </a>
+                        </div>
+                        <div v-else class="icon-viewKonfirmasi">
                             <a v-on:click="tampilSandiKonfirmasi">
                                 <span style="color: #9F9F9F;" v-if="inputType2 == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
                                 <span style="color: #9B51E0;" v-else><b-icon icon="eye-fill"></b-icon></span>
@@ -165,6 +177,18 @@ export default {
   position: relative;
     top: -37px;
     left: 95%;
+    width: 4%;
+}
+.icon-viewBaru-error{
+    position: relative;
+    top: -64px;
+    left: 90%;
+    width: 4%;
+}
+.icon-viewKonfirmasi-error{
+    position: relative;
+    top: -64px;
+    left: 90%;
     width: 4%;
 }
 </style>
