@@ -2,9 +2,8 @@
   <div class="dashboard">
     <div class="container">
       <h1>halaman dashboard ketika sudah berhasil login</h1>
-      <div class="btn">
         <button v-on:click="logout" class="btn btn-danger">Logout</button>
-      </div>
+        <br>
       <router-link to="/Admin/cobaView">coba</router-link>
     </div>
   </div>
