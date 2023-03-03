@@ -28,7 +28,13 @@
                     <label class="ms-2 mb-1">Kata Sandi</label>
                     <b-form-input class="form-input2" v-model="password" :type="inputType" :state="error.statePass" placeholder="Masukkan Kata Sandi"></b-form-input>
                     <div class="text-danger" v-if="error.password">{{ error.password }}</div>
-                    <div class="icon-view">
+                    <div v-if="error.password" class="icon-view-error">
+                      <a v-on:click="tampilSandi">
+                        <span style="color: #9F9F9F;" v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
+                        <span style="color: #9B51E0;" v-else><b-icon icon="eye-fill"></b-icon></span>
+                      </a>
+                    </div>
+                    <div v-else class="icon-view">
                       <a v-on:click="tampilSandi">
                         <span style="color: #9F9F9F;" v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
                         <span style="color: #9B51E0;" v-else><b-icon icon="eye-fill"></b-icon></span>
@@ -192,6 +198,12 @@ export default {
   position: relative;
     top: -37px;
     left: 95%;
+    width: 5%;
+}
+.icon-view-error{
+  position: relative;
+    top: -60px;
+    left: 90%;
     width: 5%;
 }
 
