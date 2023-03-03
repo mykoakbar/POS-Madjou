@@ -10,7 +10,7 @@
             <div class="rightside d-inline-flex align-items-center">
                 <div class="container px-5">
                     <h1>Lupa Kata Sandi?</h1>
-                    <p style="weight: 400; color: rgba(0, 0, 0, 0.3);">Jangan khawatir, kami akan mengirimkan instruksi reset</p>
+                    <p style="weight: 400; color: #9F9F9F;">Jangan khawatir, kami akan mengirimkan instruksi reset</p>
                     <form @submit="cekEmail">
                         <div class="my-4">
                             <div v-if="error.email" class="iconpengguna-resetPassword"><img src="assets/icon-profile-error.svg"></div>

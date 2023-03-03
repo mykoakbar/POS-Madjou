@@ -30,8 +30,8 @@
                     <div class="text-danger" v-if="error.password">{{ error.password }}</div>
                     <div class="icon-view">
                       <a v-on:click="tampilSandi">
-                        <span style="color: #9F9F9F;position: relative;left: 87.08%;right: 11.25%;top: 52.34%;bottom: 45.8%;" v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
-                        <span style="color: #9B51E0;position: relative;left: 87.08%;right: 11.25%;top: 52.34%;bottom: 45.8%;" v-else><b-icon icon="eye-fill"></b-icon></span>
+                        <span style="color: #9F9F9F;" v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
+                        <span style="color: #9B51E0;" v-else><b-icon icon="eye-fill"></b-icon></span>
                       </a>
                     </div>
                   </div>
@@ -98,7 +98,7 @@ export default {
           }else if(result.data.length==0 && this.email != '' && this.password != ''){
             this.$toast.error('Nama pengguna/email dan kata sandi anda salah', { 
                       type: 'error',
-                      position: 'bottom-right',
+                      position: 'top-right',
                       duration: 3000,
                       dismissible: true
               })
@@ -191,7 +191,7 @@ export default {
 .icon-view{
   position: relative;
     top: -37px;
-    left: 503px;
+    left: 95%;
     width: 5%;
 }
 
@@ -209,7 +209,7 @@ export default {
 .pembungkus p:before{
     content: " ";
     position: absolute;
-    border-bottom: 1px solid rgba(155, 81, 224, 0.473);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     width: 100px;
     left: -130px;
     top: 50%;
@@ -217,7 +217,7 @@ export default {
 .pembungkus p:after{
     content: " ";
     position: absolute;
-    border-bottom: 1px solid rgba(155, 81, 224, 0.473);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     width: 100px;
     right: -130px;	
     top: 50%;

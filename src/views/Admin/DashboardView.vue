@@ -19,7 +19,7 @@ methods: {
     this.$router.push({name:"LoginView"})
     this.$toast.error('Anda Berhasil Keluar', {
                         type: 'success',
-                        position: 'bottom-right',
+                        position: 'top-right',
                         duration: 3000,
                         dismissible: true
           })

@@ -3,7 +3,7 @@
     <div class="text-center mt-3">
         <p>
             <b-icon icon="arrow-left"></b-icon>  Kembali ke 
-            <router-link class="kembali-login" to="/">Login</router-link>
+            <router-link class="kembali-login" to="/"><b>Login</b></router-link>
         </p>
     </div>
   </div>

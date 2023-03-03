@@ -9,24 +9,32 @@
         <div class="col g-0">
             <div class="rightside d-flex justify-content-center align-items-center">
                 <div class="container px-5">
-                    <h1>Ubah kata sandi baru</h1>
-                    <p style="weight: 400; color: rgba(0, 0, 0, 0.3);">Kata sandi baru anda harus berbeda dengan Kata sandi sebelumya yang digunakan</p>
+                    <h1>Ubah Kata Sandi Baru</h1>
+                    <p style="weight: 400; color: #9F9F9F;">Kata sandi baru Anda harus berbeda dengan Kata sandi sebelumya yang digunakan</p>
                     <form @submit="cekSandi">
                         <div v-if="error.sandiBaru" class="iconsandi-sandibaru"><img src="assets/icon-katasandi-error.svg" alt=""></div>
                         <div v-else class="iconsandi-sandibaru"><img src="assets/icon-katasandi.svg" alt=""></div>
                         <label class="ms-2">Kata Sandi Baru</label>
                         <b-form-input :state="error.stateSandiBaru" class="form-input1" v-model="sandiBaru" :type="inputType" placeholder="Masukkan Kata Sandi Baru"></b-form-input>
                         <div v-if="error.sandiBaru" class="error-validation mt-1">{{ error.sandiBaru }}</div>
+                        <div class="icon-viewBaru">
+                            <a v-on:click="tampilSandiBaru">
+                                <span style="color: #9F9F9F;" v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
+                                <span style="color: #9B51E0;" v-else><b-icon icon="eye-fill"></b-icon></span>
+                            </a>
+                        </div>
             
                         <div v-if="error.sandiKonfirmasi" class="iconsandi-sandibaru"><img src="assets/icon-katasandi-error.svg" alt=""></div>
                         <div v-else class="iconsandi-sandibaru"><img src="assets/icon-katasandi.svg" alt=""></div>
                         <label class="ms-2">Konfirmasi Kata Sandi Baru</label>
                         <b-form-input :state="error.stateSandiKonfirmasi" class="form-input1" v-model="sandiKonfirmasi" :type="inputType" placeholder="Konfirmasi Kata Sandi Baru"></b-form-input>
                         <div v-if="error.sandiKonfirmasi" class="error-validation mt-1">{{ error.sandiKonfirmasi }}</div>
-                        <a class="btn" v-on:click="tampilSandi">
-                            <span v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
-                            <span class="text-success" v-else><b-icon icon="eye-fill"></b-icon></span>
-                        </a>
+                        <div class="icon-viewKonfirmasi">
+                            <a v-on:click="tampilSandiKonfirmasi">
+                                <span style="color: #9F9F9F;" v-if="inputType == 'password'"><b-icon icon="eye-slash-fill"></b-icon></span>
+                                <span style="color: #9B51E0;" v-else><b-icon icon="eye-fill"></b-icon></span>
+                            </a>
+                        </div>
                         <div class="d-grid mt-4">
                             <button class="button-primary" type="submit">Simpan</button>
                         </div>
@@ -98,7 +106,10 @@ export default {
                 this.error.stateSandiKonfirmasi = false
             } 
         },
-        tampilSandi(){
+        tampilSandiBaru(){
+            this.inputType = this.inputType === "password" ? "text" : "password";
+        },
+        tampilSandiKonfirmasi(){
             this.inputType = this.inputType === "password" ? "text" : "password";
         }
     }
@@ -141,5 +152,18 @@ export default {
     top: 60px;
     left: 15px;
     width: 5%;
+}
+
+.icon-viewBaru{
+  position: relative;
+    top: -37px;
+    left: 95%;
+    width: 4%;
+}
+.icon-viewKonfirmasi{
+  position: relative;
+    top: -37px;
+    left: 95%;
+    width: 4%;
 }
 </style>

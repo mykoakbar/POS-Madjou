@@ -10,8 +10,8 @@
             <div class="rightside d-flex justify-content-center align-items-center">
                 <div class="container text-center px-5">
                     <h1>Cek email anda</h1>
-                    <p style="weight: 400; color: rgba(0, 0, 0, 0.3);">Kami mengirim tautan setel ulang kata sandi ke :</p>
-                    <h4 v-for="email in wadah" :key="email.id">{{ email.email }}</h4>
+                    <p style="weight: 400; color: #9F9F9F;">Kami mengirim tautan setel ulang kata sandi ke</p>
+                    <b><p style="weight: 400; color: rgb(126 124 124);" v-for="email in wadah" :key="email.id">{{ email.email }}</p></b>
                     <div class="d-grid mt-5">
                         <router-link to="/Login/resetPassword/sandiBaru/sandiBaruView">
                             <button type="submit" class="button-primary">Kirim</button>
