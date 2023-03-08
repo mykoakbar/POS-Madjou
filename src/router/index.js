@@ -46,4 +46,15 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  const isAutentikasi = JSON.parse(localStorage.getItem('user-info'))
+
+  if(to.path === "/Admin/dashboardView" && !isAutentikasi) next({path: "/"}); 
+  if(to.path === "/" && isAutentikasi) next({path: "/Admin/dashboardView"});
+  if(to.name === "resetPasswordView" && isAutentikasi) next({path: "/Admin/dashboardView"});
+  if(to.name === "sandiBaruView" && isAutentikasi) next({path: "/Admin/dashboardView"});
+  if(to.name === "verifikasiEmailView" && isAutentikasi) next({path: "/Admin/dashboardView"});
+  else next();
+})
+
 export default router

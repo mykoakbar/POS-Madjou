@@ -3,10 +3,10 @@
     <div class="row">
         <div class="col g-0">
             <div class="leftside d-flex justify-content-center align-items-center">
-                <img src="assets/cekEmail.svg">
+                <img style="width: 100%;" src="assets/cekEmail.svg">
             </div>
         </div>
-        <div class="col g-0">
+        <div class="col-md-6 g-0">
             <div class="rightside d-flex justify-content-center align-items-center">
                 <div class="container text-center px-5">
                     <h1>Cek email anda</h1>

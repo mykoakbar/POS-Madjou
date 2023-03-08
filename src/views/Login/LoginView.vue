@@ -4,11 +4,11 @@
 
       <div class="col g-0">
         <div class="leftside d-flex justify-content-center align-items-center">
-            <img src="assets/icon-laptop.svg" alt="">
+            <img style="width: 60%; margin-bottom: 50px;" src="assets/loginPage.png" alt="">
         </div>
       </div>
 
-      <div class="col g-0">
+      <div class="col-md-6 g-0">
         <div class="rightside d-inline-flex align-items-center">
           <div class="container px-5">
             <h1><strong>Masuk</strong></h1>
@@ -99,7 +99,7 @@ export default {
           `http://localhost:3000/user?username/email=${this.email}&password=${this.password}`
           )
           if(result.status==200 && result.data.length>0){
-            localStorage.setItem("user-info", JSON.stringify(result.data[0]))
+            localStorage.setItem("user-info", JSON.stringify(result.data[0],["otp"]))
             this.$router.push({path: "/Admin/DashboardView"})
           }else if(result.data.length==0 && this.email != '' && this.password != ''){
             this.$toast.error('Nama pengguna/email dan kata sandi anda salah', { 
@@ -126,12 +126,12 @@ export default {
             }
         }
   },
-  mounted(){
-    let user = localStorage.getItem('user-info');
-    if(user){
-      this.$router.push({path: "/Admin/DashboardView"})
-    }
-  }
+  // mounted(){
+  //   let user = localStorage.getItem('user-info');
+  //   if(user){
+  //     this.$router.push({path: "/Admin/DashboardView"})
+  //   }
+  // }
 };
 </script>
 
@@ -197,7 +197,7 @@ export default {
 .icon-view{
   position: relative;
     top: -37px;
-    left: 95%;
+    left: 91%;
     width: 5%;
 }
 .icon-view-error{
@@ -205,6 +205,21 @@ export default {
     top: -60px;
     left: 90%;
     width: 5%;
+}
+
+@media screen and (max-width: 460px){
+  .icon-view-error{
+    left: 83%;
+    position: relative;
+    top: -60px;
+    width: 5%;
+  }
+  .icon-view{
+    position: relative;
+    top: -37px;
+    left: 89%;
+    width: 5%;
+  }
 }
 
 .col-sm-3 {

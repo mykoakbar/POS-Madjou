@@ -3,10 +3,10 @@
     <div class="row g-0">
         <div class="col g-0">
             <div class="leftside d-flex justify-content-center align-items-center">
-                <img src="assets/Reset Password-1.svg">
+                <img style="width: 100%;" src="assets/Reset Password-1.svg">
             </div>
         </div>
-        <div class="col g-0">
+        <div class="col-md-6 g-0">
             <div class="rightside d-inline-flex align-items-center">
                 <div class="container px-5">
                     <h1>Lupa Kata Sandi?</h1>

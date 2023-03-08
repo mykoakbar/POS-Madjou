@@ -3,10 +3,10 @@
     <div class="row g-0">
         <div class="col g-0">
             <div class="leftside d-flex justify-content-center align-items-center">
-                <img src="assets/cekEmail.svg">
+                <img style="width: 100%;" src="assets/cekEmail.svg">
             </div>
         </div>
-        <div class="col g-0">
+        <div class="col-md-6 g-0">
             <div class="rightside d-flex justify-content-center align-items-center">
                 <div class="container px-5">
                     <h1>Ubah Kata Sandi Baru</h1>
@@ -190,5 +190,32 @@ export default {
     top: -64px;
     left: 90%;
     width: 4%;
+}
+
+@media screen and(max-width: 460px){
+    .icon-viewBaru{
+        position: relative;
+        top: -37px;
+        left: 90%;
+        width: 4%;
+    }
+    .icon-viewKonfirmasi{
+        position: relative;
+        top: -37px;
+        left: 90%;
+        width: 4%;
+    }
+    .icon-viewBaru-error{
+        position: relative;
+        top: -64px;
+        left: 83%;
+        width: 4%;
+    }
+    .icon-viewKonfirmasi-error{
+        position: relative;
+        top: -64px;
+        left: 83%;
+        width: 4%;
+    }
 }
 </style>
