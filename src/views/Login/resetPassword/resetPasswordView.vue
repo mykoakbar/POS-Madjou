@@ -60,6 +60,7 @@ export default {
           let result = await axios .get(`http://localhost:3000/user?email=${this.email}`)
           if(result.status==200 && result.data.length>0){
             setTimeout(() => { this.$router.push({ path: '/Login/resetPassword/verifikasiEmail/verifikasiEmailView'}) }, 2000)
+            localStorage.setItem("email", this.email)
             this.success.email = 'Email anda benar'
             this.error.stateEmail = true;
           } else if(result.status==200 && result.data.length==0 && this.email != ''){

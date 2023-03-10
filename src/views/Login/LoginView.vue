@@ -99,7 +99,8 @@ export default {
           `http://localhost:3000/user?username/email=${this.email}&password=${this.password}`
           )
           if(result.status==200 && result.data.length>0){
-            localStorage.setItem("user-info", JSON.stringify(result.data[0],["otp"]))
+            localStorage.setItem("user-info", JSON.stringify(result.data[0],["username"]))
+            localStorage.setItem("username", this.email)
             this.$router.push({path: "/Admin/DashboardView"})
           }else if(result.data.length==0 && this.email != '' && this.password != ''){
             this.$toast.error('Nama pengguna/email dan kata sandi anda salah', { 

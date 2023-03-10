@@ -2,7 +2,7 @@
     <div class="headerDashboard mt-3">
         <div class="card-header">
             <div class="body">
-              <h3>Hallo, User 👋</h3>
+              <h3 style="margin: 0;">Hallo, {{username}} 👋</h3>
             </div>
             <div class="body">
               <div class="icon-search">
@@ -14,7 +14,7 @@
               <div class="notif mx-2">
                 <img src="assets/icon-notification.svg" alt="">
               </div>
-              <div class="img-circle mx-2">
+              <div class="mx-2">
                 <img class="avatar" src="dummy-pp.png" alt="">
               </div>
             </div>
@@ -25,7 +25,11 @@
 <script>
 export default {
     name: 'headerDashboard',
-    
+    data(){
+      return{
+        username: localStorage.getItem("username")
+  }
+},
   }
 </script>
 
@@ -57,13 +61,13 @@ export default {
 }
 .icon-search{
   position: relative;
-  top: 8px;
+  top: 7px;
   width: 5%;
   left: 43px;
 }
 .avatar{
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 .notif{

@@ -1,6 +1,6 @@
 <template>
   <div class="verifikasiEmail">
-    <div class="row">
+    <div class="row g-0">
         <div class="col g-0">
             <div class="leftside d-flex justify-content-center align-items-center">
                 <img style="width: 100%;" src="assets/cekEmail.svg">
@@ -11,8 +11,8 @@
                 <div class="container text-center px-5">
                     <h1>Cek email anda</h1>
                     <p style="weight: 400; color: #9F9F9F;">Kami mengirim tautan setel ulang kata sandi ke</p>
-                    <b><p style="weight: 400; color: rgb(126 124 124);" v-for="email in wadah" :key="email.id">{{ email.email }}</p></b>
-                    <div class="d-grid mt-5">
+                    <b><p style="color: rgb(126 124 124);">{{ email }}</p></b>
+                    <div class="d-grid mt-4">
                         <router-link to="/Login/resetPassword/sandiBaru/sandiBaruView">
                             <button type="submit" class="button-primary">Kirim</button>
                         </router-link>
@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import kembaliLogin from '@/components/kembaliLogin.vue'
 
 export default {
@@ -36,21 +35,9 @@ export default {
     },
     data(){
         return{
-            wadah: {}
+            email : localStorage.getItem("email")
         }
-    },
-    methods: {
-        ambilEmail(data){
-            this.wadah = data;
-        }
-    },
-    async mounted(){
-        axios
-        .get('http://localhost:3000/user')
-        .then((response) => this.ambilEmail(response.data))
-        .catch((error) => console.log(error))
     }
-
 }
 </script>
 

@@ -87,6 +87,7 @@ export default {
             if(this.sandiBaru.length > 8 && this.sandiBaru.match(/[a-z]/) && this.sandiBaru.match(/[A-Z]/) && this.sandiBaru.match(/\d/) && this.sandiBaru != '' && this.sandiBaru == this.sandiKonfirmasi){
                 this.error.stateSandiBaru = null
                 this.$router.push("/")
+                localStorage.removeItem("email")
                 this.$toast.error('Anda berhasil membuat kata sandi', { 
                       type: 'success',
                       position: 'bottom-right',
