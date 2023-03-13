@@ -29,9 +29,10 @@
 
               <li>
                 <a v-on:click="posModuleMenu">
-                  <div class="row1 p-2 mt-3 px-3">
+                  <div class="row1 p-2 mt-3 px-3" v-bind:class="{ barActive : isActive, 'text-light' : isActive}">
                     <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-work.svg">
+                      <img v-if="isActive" style="width: 22px;" src="assets/icon-work-light.svg">
+                      <img v-else style="width: 22px;" src="assets/icon-work.svg">
                       <p>POS Module</p>
                     </div>
                     <div class="col text-end">
@@ -161,6 +162,7 @@ export default {
   },
   data(){
     return{
+      isActive : null,
       posModule : null
     }
   },
@@ -178,8 +180,10 @@ export default {
     posModuleMenu(){
       if(this.posModule == null){
         this.posModule = true;
+        this.isActive = true;
       } else if(this.posModule == true){
         this.posModule = null;
+        this.isActive = null;
       } else{
         return this.posModule;
       }
@@ -227,11 +231,15 @@ export default {
 p{
   margin: 0 !important;
 }
+.barActive{
+  background-color: #9B51E0; 
+  border-radius: 0px 20px 20px 0px;
+  color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+}
 a{
   text-decoration: none !important;
   color: #7C7C7C !important;
 }
-
 
 ::-webkit-scrollbar {
     width: 4px;
