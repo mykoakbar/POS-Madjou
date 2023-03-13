@@ -1,17 +1,21 @@
 <template>
-    <div class="coba">
-      
-    </div>
+  <div class="cobaView">
+    <div class="btn btn-primary">coba</div>
+  </div>
 </template>
 
 <script>
-
-
 export default {
   name: 'cobaView',
+  methods:{
+    gantiWarna(){
+
+    }
+  }
 };
 </script>
 
 <style>
+
 
 </style>

@@ -1,44 +1,111 @@
 <template>
   <div class="dashboard">
     <div class="sidebar">
-            <div class="row align-items-center mt-1 mb-5">
-              <div class="col-5 text-end">
-                <div class="circle-avatar">
-                  <img style="width: 80%" src="POS.png" alt="">
-                </div>
-              </div>
-              <div class="col align-items-center">
-                <div class="name-app text-start align-items-center">
-                  <h6>POS</h6>
-                  <h6>(Point Of Sale)</h6>
-                </div>
-              </div>
-            </div>
+      <div class="row align-items-center mt-4 mb-5">
+        <div class="col-5 text-end">
+          <div class="circle-avatar">
+            <img style="width: 80%" src="POS.png" alt="">
+          </div>
+        </div>
+        <div class="col align-items-center">
+          <div class="name-app text-start align-items-center">
+            <h6>POS</h6>
+            <h6>(Point Of Sale)</h6>
+          </div>
+        </div>
+      </div>
 
             <ul>
               <li>
-                <div class="row1 mt-4">
-                  <a><router-link to="/Admin/cobaView">
+                <a><router-link to="/Admin/cobaView">
+                  <div class="row1 p-2 mt-4 px-3">
                     <div class="row2">
                       <img style="width: 22px;" src="assets/icon-home.svg">
                       <p>Dashboard</p>
                     </div>
-                  </router-link></a>
-                </div>
+                  </div>
+                </router-link></a>
               </li>
+
               <li>
-                <div class="row1 mt-4">
+                <a v-on:click="posModuleMenu">
+                  <div class="row1 p-2 mt-3 px-3">
                     <div class="row2">
                       <img style="width: 22px;" src="assets/icon-work.svg">
                       <p>POS Module</p>
                     </div>
-                  <div class="col text-end">
-                    <b-icon icon="chevron-right"></b-icon>
+                    <div class="col text-end">
+                      <b-icon icon="chevron-right"></b-icon>
+                    </div>
+                  </div>
+                </a>
+
+                <div v-if="posModule">
+                  <div class="row1 px-3 mt-4">
+                    <div class="row2">
+                      <b-icon icon="arrow-right-short"></b-icon>
+                      <p>Master Bahan</p>
+                    </div>
+                  </div>
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                        <b-icon icon="arrow-right-short"></b-icon>
+                        <p>Master Product</p>
+                      </div>
+                  </div>
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                        <b-icon icon="arrow-right-short"></b-icon>
+                        <p>Master Inventory</p>
+                      </div>
+                  </div>
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                        <b-icon icon="arrow-right-short"></b-icon>
+                        <p>Manajemen Order</p>
+                      </div>
+                  </div>
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                        <b-icon icon="arrow-right-short"></b-icon>
+                        <p>Manajemen Transaksi</p>
+                      </div>
+                  </div>
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                        <b-icon icon="arrow-right-short"></b-icon>
+                        <p>Manajemen Pembayaran</p>
+                      </div>
+                  </div>
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                        <b-icon icon="arrow-right-short"></b-icon>
+                        <p>Master Pelanggan</p>
+                      </div>
+                  </div>
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                        <b-icon icon="arrow-right-short"></b-icon>
+                        <p>Master Suplier</p>
+                      </div>
+                  </div>
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                        <b-icon icon="arrow-right-short"></b-icon>
+                        <p>Akuntansi</p>
+                      </div>
+                  </div>
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                        <b-icon icon="arrow-right-short"></b-icon>
+                        <p>Manajemen Laporan</p>
+                      </div>
                   </div>
                 </div>
               </li>
+
               <li>
-                <div class="row1 mt-4">
+                <div class="row1 p-2 mt-3 px-3">
                     <div class="row2">
                       <img style="width: 22px;" src="assets/icon-3User.svg">
                       <p>Manajemen Karyawan</p>
@@ -49,7 +116,7 @@
                 </div>
               </li>
               <li>
-                <div class="row1 mt-4">
+                <div class="row1 p-2 mt-3 px-3">
                     <div class="row2">
                       <img style="width: 22px;" src="assets/icon-chart.svg">
                       <p>CRM</p>
@@ -60,7 +127,7 @@
                 </div>
               </li>
               <li>
-                <div class="row1 mt-4">
+                <div class="row1 p-2 mt-3 px-3">
                     <div class="row2">
                       <img style="width: 22px;" src="assets/icon-ticket.svg">
                       <p>Ticketing Manajemen System</p>
@@ -68,112 +135,7 @@
                 </div>
               </li>
               <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
-                    <div class="row2">
-                      <img style="width: 22px;" src="assets/icon-setting.svg">
-                      <p>Setting</p>
-                    </div>
-                </div>
-              </li>
-              <li>
-                <div class="row1 mt-4">
+                <div class="row1 p-2 mt-3 px-3">
                     <div class="row2">
                       <img style="width: 22px;" src="assets/icon-setting.svg">
                       <p>Setting</p>
@@ -183,27 +145,8 @@
             </ul>
             <button v-on:click="logout" class="btn btn-danger">Logout</button>
     </div>
-
     <div style="padding-left: 300px;">
-    
       <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-      <headerDashboard />
-
     </div>
   </div>
 </template>
@@ -212,22 +155,36 @@
 import headerDashboard from '@/components/headerDashboard.vue'
 
 export default {
-name: "DashboardView",
-components: {
-  headerDashboard
-},
-methods: {
-  logout(){
-    localStorage.clear();
-    this.$router.push({name:"LoginView"})
-    this.$toast.error('Anda Berhasil Keluar', {
-                        type: 'success',
-                        position: 'top-right',
-                        duration: 3000,
-                        dismissible: true
-          })
+  name: "DashboardView",
+  components: {
+    headerDashboard
+  },
+  data(){
+    return{
+      posModule : null
+    }
+  },
+  methods: {
+    logout(){
+      localStorage.clear();
+      this.$router.push({name:"LoginView"})
+      this.$toast.error('Anda Berhasil Keluar', {
+                          type: 'success',
+                          position: 'top-right',
+                          duration: 3000,
+                          dismissible: true
+            })
+    },
+    posModuleMenu(){
+      if(this.posModule == null){
+        this.posModule = true;
+      } else if(this.posModule == true){
+        this.posModule = null;
+      } else{
+        return this.posModule;
+      }
+    }
   }
-}
 }
 </script>
 
@@ -254,7 +211,6 @@ methods: {
   background-color: #ffffff;
   border-radius: 0 15px 15px 0;
   box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.15);
-  padding: 20px;
   overflow:auto;
 }
 .sidebar h2 {
@@ -273,12 +229,13 @@ p{
 }
 a{
   text-decoration: none !important;
-  color: #212529 !important;
+  color: #7C7C7C !important;
 }
 
 
 ::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
 }
  
 ::-webkit-scrollbar-track {      
