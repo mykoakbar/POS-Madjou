@@ -17,7 +17,7 @@ export default {
 
 <style>
 .kembali-login{
-    color: #9B51E0;
+    color: #9B51E0 !important;
     text-decoration: none;
 }
 </style>
