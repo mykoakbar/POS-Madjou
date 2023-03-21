@@ -14,7 +14,7 @@
                     <b><p style="color: rgb(126 124 124);">{{ email }}</p></b>
                     <div class="d-grid mt-4">
                         <router-link to="/Login/resetPassword/sandiBaru/sandiBaruView">
-                            <button type="submit" class="button-primary">Kirim</button>
+                            <button type="submit" class="button-primary">Buka Email App</button>
                         </router-link>
                     </div> 
                     <kembaliLogin/>

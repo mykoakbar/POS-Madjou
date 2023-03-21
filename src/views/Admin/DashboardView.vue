@@ -44,7 +44,7 @@
                 <div v-if="posModule">
                   <div class="row1 px-3 mt-4">
                     <div class="row2">
-                      <b-icon icon="arrow-right-short"></b-icon>
+                      <b-icon icon="circle"></b-icon>
                       <p>Master Bahan</p>
                     </div>
                   </div>
