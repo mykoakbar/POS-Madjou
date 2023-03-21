@@ -206,6 +206,7 @@ export default {
   align-items: center;
   padding: 0px;
   gap: 22px;
+  cursor: pointer;
 }
 .sidebar {
   position: fixed;
