@@ -26,7 +26,8 @@
                   </div>
                 </router-link></a>
               </li>
-
+            
+              <!-- Start Script POS Module -->
               <li>
                 <a v-on:click="posModuleMenu">
                   <div class="row1 p-2 mt-3 px-3" v-bind:class="{ barActive : isActive, 'text-light' : isActive}">
@@ -36,11 +37,11 @@
                       <p>POS Module</p>
                     </div>
                     <div class="col text-end">
-                      <b-icon icon="chevron-right"></b-icon>
+                      <b-icon v-if="isActive" icon="chevron-down"></b-icon>
+                      <b-icon v-else icon="chevron-right"></b-icon>
                     </div>
                   </div>
                 </a>
-
                 <div v-if="posModule">
                   <div class="row1 px-3 mt-4">
                     <div class="row2">
@@ -104,6 +105,7 @@
                   </div>
                 </div>
               </li>
+              <!-- End Script POS Module -->
 
               <li>
                 <div class="row1 p-2 mt-3 px-3">
