@@ -198,6 +198,7 @@ export default {
   flex-direction: row;
   justify-content: start;
   align-items: center;
+  cursor: pointer;
 }
 .row2{
   display: flex;
