@@ -50,55 +50,55 @@
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="arrow-right-short"></b-icon>
+                        <b-icon icon="circle"></b-icon>
                         <p>Master Product</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="arrow-right-short"></b-icon>
+                        <b-icon icon="circle"></b-icon>
                         <p>Master Inventory</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="arrow-right-short"></b-icon>
+                        <b-icon icon="circle"></b-icon>
                         <p>Manajemen Order</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="arrow-right-short"></b-icon>
+                        <b-icon icon="circle"></b-icon>
                         <p>Manajemen Transaksi</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="arrow-right-short"></b-icon>
+                        <b-icon icon="circle"></b-icon>
                         <p>Manajemen Pembayaran</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="arrow-right-short"></b-icon>
+                        <b-icon icon="circle"></b-icon>
                         <p>Master Pelanggan</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="arrow-right-short"></b-icon>
+                        <b-icon icon="circle"></b-icon>
                         <p>Master Suplier</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="arrow-right-short"></b-icon>
+                        <b-icon icon="circle"></b-icon>
                         <p>Akuntansi</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="arrow-right-short"></b-icon>
+                        <b-icon icon="circle"></b-icon>
                         <p>Manajemen Laporan</p>
                       </div>
                   </div>
