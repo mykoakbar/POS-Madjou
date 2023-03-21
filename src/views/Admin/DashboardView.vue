@@ -17,7 +17,7 @@
 
             <ul>
               <li>
-                <a><router-link to="/Admin/cobaView">
+                <a><router-link to="/Admin/DashboardView">
                   <div class="row1 p-2 mt-4 px-3">
                     <div class="row2">
                       <img style="width: 22px;" src="assets/icon-home.svg">
