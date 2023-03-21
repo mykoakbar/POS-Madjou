@@ -21,7 +21,7 @@
                             <div class="text-success mt-1" v-if="success.email"><b-icon icon="arrow-clockwise" animation="spin" font-scale="1"></b-icon> {{ success.email }}</div>
                         </div>
                         <div class="d-grid mt-5">
-                            <button type="submit" class="button-primary">Kirim</button>
+                            <button type="submit" class="button-primary">Ubah Kata Sandi</button>
                         </div>
                     </form>
                     <kembaliLogin />
