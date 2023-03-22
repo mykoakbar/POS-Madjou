@@ -1,5 +1,5 @@
 <template>
-    <div class="headerDashboard mt-3">
+    <div class="headerDashboard my-3">
         <div class="card-header">
             <div class="body">
               <h3 style="margin: 0;">Hallo, {{username}} 👋</h3>

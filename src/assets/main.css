@@ -1,6 +1,14 @@
 #app {
     font-family: 'Poppins', sans-serif;
 }
+.bg-madjou{
+    background: #9B51E0;
+    color: white;
+}
+.bg-madjou:hover{
+    background: #8d44d1;
+    color: white;
+}
 ::-webkit-scrollbar {
     width: 4px;
 }

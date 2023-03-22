@@ -6,6 +6,9 @@ import cobaView from '../views/Admin/cobaView.vue'
 import resetPasswordView from '../views/Login/resetPassword/resetPasswordView.vue'
 import sandiBaruView from '../views/Login/resetPassword/sandiBaru/sandiBaruView.vue'
 import verifikasiEmailView from '../views/Login/resetPassword/verifikasiEmail/verifikasiEmailView.vue'
+import bahanView from '../views/Admin/masterBahan/bahanView.vue'
+import kategoriBahan from '../views/Admin/masterBahan/kategoriBahan.vue'
+import tambahBahan from '../views/Admin/masterBahan/tambahBahan.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +42,21 @@ const routes = [
     path: '/Login/resetPassword/verifikasiEmail/verifikasiEmailView',
     name: 'verifikasiEmailView',
     component: verifikasiEmailView
+  },
+  {
+    path: '/Admin/masterBahan/bahanView',
+    name: 'bahanView',
+    component: bahanView
+  },
+  {
+    path: '/Admin/masterBahan/kategoriBahan',
+    name: 'kategoriBahan',
+    component: kategoriBahan
+  },
+  {
+    path: '/Admin/masterBahan/tambahBahan',
+    name: 'tambahBahan',
+    component: tambahBahan
   }
 ]
 
