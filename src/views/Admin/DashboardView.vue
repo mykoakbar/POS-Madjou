@@ -21,7 +21,7 @@
                   <div class="row1 p-2 mt-4 px-3">
                     <div class="row2">
                       <img style="width: 22px;" src="assets/icon-home.svg">
-                      <p>Dashboard</p>
+                      <p style="color:black">Dashboard</p>
                     </div>
                   </div>
                 </router-link></a>
@@ -42,68 +42,119 @@
                     </div>
                   </div>
                 </a>
-                <div v-if="posModule">
-                  <div class="row1 px-3 mt-4">
+                
+                <!-- Start Master Bahan Module-->
+            <div v-if="posModule">
+              <li>
+                <a v-on:click="posMasterBahanMenu">
+                  <div class="row1 px-3 mt-2">
                     <div class="row2">
-                      <b-icon icon="circle"></b-icon>
-                      <p>Master Bahan</p>
+                        <img v-if="isActiveMB" style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar-active.svg">
+                        <img v-else style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
+                      <p style="color:black">Master Bahan</p>
                     </div>
                   </div>
+                </a>
+                <div v-if="posMasterBahan">
+                  <div class="sidebar-kotak"></div>
+                  <div class="sidebar-grid"></div>
+                  <div class="submenu1">
+                      <div class="row2">
+                        <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-pilihanmenu.svg">
+                      <p style="font-size: 16px;font-weight: 450; font-style: normal;">Kategori Bahan</p>
+                      </div>
+                  </div>
+                  <div class="submenu2">
+                      <div class="row2">
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-pilihanmenu.svg">
+                      <p style="font-size: 16px;font-weight: 450; font-style: normal;">Bahan</p>
+                      </div>
+                  </div>
+                </div>
+              </li>
+                <!-- End Master Bahan Module-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="circle"></b-icon>
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
                         <p>Master Product</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="circle"></b-icon>
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
                         <p>Master Inventory</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="circle"></b-icon>
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
                         <p>Manajemen Order</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="circle"></b-icon>
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
                         <p>Manajemen Transaksi</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="circle"></b-icon>
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
                         <p>Manajemen Pembayaran</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="circle"></b-icon>
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
                         <p>Master Pelanggan</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="circle"></b-icon>
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
                         <p>Master Suplier</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="circle"></b-icon>
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
                         <p>Akuntansi</p>
                       </div>
                   </div>
                   <div class="row1 px-3 mt-2">
                       <div class="row2">
-                        <b-icon icon="circle"></b-icon>
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
                         <p>Manajemen Laporan</p>
                       </div>
                   </div>
                 </div>
+                <!-- End Category Module-->
               </li>
               <!-- End Script POS Module -->
 
@@ -165,7 +216,12 @@ export default {
   data(){
     return{
       isActive : null,
-      posModule : null
+      isActiveMB : null,
+      isActiveMP : null,
+      isActiveMI : null,
+      isActiveMO : null,
+      posModule : null,
+      posMasterBahan : null
     }
   },
   methods: {
@@ -188,6 +244,17 @@ export default {
         this.isActive = null;
       } else{
         return this.posModule;
+      }
+    },
+    posMasterBahanMenu(){
+      if(this.posMasterBahan == null){
+        this.posMasterBahan = true;
+        this.isActiveMB = true;
+      } else if(this.posMasterBahan == true){
+        this.posMasterBahan = null;
+        this.isActiveMB = null;
+      } else{
+        return this.posMasterBahan;
       }
     }
   }
@@ -232,10 +299,48 @@ export default {
 .sidebar li {
   margin-bottom: 10px;
 }
+
+.submenu1{
+  position: fixed;
+  left: 265px;
+  top: 264px;
+}
+
+.submenu2{
+  position: fixed;
+  left: 265px;
+  top: 295px;
+}
+
+.sidebar-kotak{
+  position: fixed;
+  width: 141px;
+  height: 61px;
+  left: 292px;
+  top: 261px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+}
+
+.sidebar-grid{
+  position: fixed;
+  width: 141px;
+  height: 1px;
+  left: 292px;
+  top: 291px;
+  background: rgba(217, 217, 217, 0.6);
+}
+
 p{
   margin: 0 !important;
 }
 .barActive{
+  background-color: #9B51E0; 
+  border-radius: 0px 20px 20px 0px;
+  color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+}
+.barMasterBahan{
   background-color: #9B51E0; 
   border-radius: 0px 20px 20px 0px;
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
