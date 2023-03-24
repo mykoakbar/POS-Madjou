@@ -57,7 +57,7 @@
                 <div v-if="posMasterBahan">
                   <div class="sidebar-kotak"></div>
                   <div class="sidebar-grid"></div>
-                    <router-link to="/Admin/masterBahan/kategoriBahan">
+                    <router-link to="/Admin/kategoriBahan/kategoriView">
                     <div class="submenu1">
                       <div class="row2">
                         <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-pilihanmenu.svg">
@@ -199,8 +199,31 @@
                     </div>
                 </div>
               </li>
+              <li>
+                <a v-on:click="posSettingMenu">
+                  <div class="row1 p-2 mt-3 px-3" v-bind:class="{ barActive : isActiveSetting, 'text-light' : isActiveSetting}">
+                    <div class="row2">
+                      <img v-if="isActiveSetting" style="width: 22px;" src="assets/icon-setting-light.svg">
+                      <img v-else style="width: 22px;" src="assets/icon-setting.svg">
+                      <p>Setting</p>
+                    </div>
+                    <div class="col text-end">
+                      <b-icon v-if="isActiveSetting" icon="chevron-down"></b-icon>
+                      <b-icon v-else icon="chevron-right"></b-icon>
+                    </div>
+                  </div>
+                </a>
+                <div v-if="posSetting">
+                  <div class="row1 px-3 mt-2">
+                      <div class="row2">
+                      <img style="width: 14px;left: 4px;position: relative;" src="assets/icon-menubar.svg">
+                      <button v-on:click="logout" class="btn btn-danger"><b-icon icon="box-arrow-in-left"></b-icon> Logout</button>
+                      </div>
+                  </div>
+                </div>
+                <!-- End Category Module-->
+              </li>
             </ul>
-            <button v-on:click="logout" class="btn btn-danger">Logout</button>
   </div>
 </template>
 
@@ -214,8 +237,10 @@ export default {
       isActiveMP : null,
       isActiveMI : null,
       isActiveMO : null,
+      isActiveSetting : null,
       posModule : null,
-      posMasterBahan : null
+      posMasterBahan : null,
+      posSetting : null
     }
   },
   methods: {
@@ -249,6 +274,17 @@ export default {
         this.isActiveMB = null;
       } else{
         return this.posMasterBahan;
+      }
+    },
+    posSettingMenu(){
+      if(this.posSetting == null){
+        this.posSetting = true;
+        this.isActiveSetting = true;
+      } else if(this.posSetting == true){
+        this.posSetting = null;
+        this.isActiveSetting = null;
+      } else{
+        return this.posSetting;
       }
     }
   }

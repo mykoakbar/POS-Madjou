@@ -3,10 +3,8 @@
     <sidebarAdmin />
     <div style="padding-left: 300px;">
         <headerDashboard />
+        <h4 class="outside">Tambah Bahan</h4>
         <div class="mx-4">
-            <div>
-                <h4>Tambah Bahan</h4>
-            </div>
             <div class="card-body py-3">
                 <div class="inside-body">
                     <form action="">
@@ -42,6 +40,14 @@ export default {
   padding: 0 20px 0 20px;
   width: 100%;
 }
+
+.outside{
+    padding: 0 20px 0 20px;
+    width: 100%;
+    margin-bottom: 35px;
+    margin-top: 80px;
+}
+
 .card-body{
   display: flex;
   justify-content: space-between;

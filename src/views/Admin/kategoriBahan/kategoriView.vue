@@ -1,30 +1,27 @@
 <template>
-  <div class="bahanView">
+  <div class="kategoriView">
     <sidebarAdmin />
     <div style="padding-left: 300px;">
         <headerDashboard />
+        <h4 class="outside">Kategori Bahan</h4>
         <div class="body">
             <div class="card-body py-3">
                 <div class="inside-body">
                     <div class="header-inside-body">
                         <div class="header-inside-body">
-                            <h4>Bahan</h4>
                         </div>
                         <div class="header-inside-body">
                             <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search Bahan" aria-label="Search">
+                                <input class="form-control me-2" type="search" placeholder="Search Kategori Bahan" aria-label="Search">
                             </form>
-                            <router-link to="/Admin/masterBahan/tambahBahan"><button class="btn bg-madjou"> <b-icon icon="plus"></b-icon> Tambah Bahan</button></router-link> 
+                            <router-link to="/Admin/kategoriBahan/tambahKategori"><button class="btn bg-madjou"> <b-icon icon="plus"></b-icon> Tambah Kategori Bahan</button></router-link> 
                         </div>
                     </div>
                     <table class="table text-center">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Bahan Kategori</th>
-                            <th>Nama Bahan</th>
-                            <th>Qty</th>
-                            <th>HPP</th>
+                            <th>Nama Kategori Bahan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -32,17 +29,11 @@
                         <tr>
                             <th>1</th>
                             <td>Cat Besi</td>
-                            <td>Cat Besi Warna Kuning</td>
-                            <td>5</td>
-                            <td>Rp.15.000</td>
                             <td><b-icon icon="trash2"></b-icon> <b-icon icon="pencil-fill"></b-icon></td>
                         </tr>
                         <tr>
-                            <th>1</th>
+                            <th>2</th>
                             <td>Cat Besi</td>
-                            <td>Cat Besi Warna Kuning</td>
-                            <td>5</td>
-                            <td>Rp.15.000</td>
                             <td><b-icon icon="trash2"></b-icon> <b-icon icon="pencil-fill"></b-icon></td>
                         </tr>
                     </tbody>
@@ -59,7 +50,7 @@ import sidebarAdmin from '@/components/sidebarAdmin.vue'
 import headerDashboard from '@/components/headerDashboard.vue'
 
 export default {
-    name: "bahanView",
+    name: "kategoriView",
     components: {
         sidebarAdmin,
         headerDashboard
@@ -86,6 +77,14 @@ export default {
     padding: 0 20px 0 20px;
     width: 100%;
 }
+
+.outside{
+    padding: 0 20px 0 20px;
+    width: 100%;
+    margin-bottom: 35px;
+    margin-top: 80px;
+}
+
 th{
    height: 70px;
 }

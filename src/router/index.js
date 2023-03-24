@@ -2,12 +2,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import LoginView from '../views/Login/LoginView.vue'
 import DashboardView from '../views/Admin/DashboardView.vue'
-import cobaView from '../views/Admin/cobaView.vue'
 import resetPasswordView from '../views/Login/resetPassword/resetPasswordView.vue'
 import sandiBaruView from '../views/Login/resetPassword/sandiBaru/sandiBaruView.vue'
 import verifikasiEmailView from '../views/Login/resetPassword/verifikasiEmail/verifikasiEmailView.vue'
 import bahanView from '../views/Admin/masterBahan/bahanView.vue'
-import kategoriBahan from '../views/Admin/masterBahan/kategoriBahan.vue'
+import kategoriView from '../views/Admin/kategoriBahan/kategoriView.vue'
+import tambahKategori from '../views/Admin/kategoriBahan/tambahKategori.vue'
 import tambahBahan from '../views/Admin/masterBahan/tambahBahan.vue'
 
 Vue.use(VueRouter)
@@ -22,11 +22,6 @@ const routes = [
     path: '/Admin/DashboardView',
     name: 'DashboardView',
     component: DashboardView
-  },
-  {
-    path: '/Admin/cobaView',
-    name: 'cobaView',
-    component: cobaView
   },
   {
     path: '/Login/resetPassword/resetPasswordView',
@@ -49,9 +44,14 @@ const routes = [
     component: bahanView
   },
   {
-    path: '/Admin/masterBahan/kategoriBahan',
-    name: 'kategoriBahan',
-    component: kategoriBahan
+    path: '/Admin/kategoriBahan/kategoriView',
+    name: 'kategoriView',
+    component: kategoriView
+  },
+  {
+    path: '/Admin/kategoriBahan/tambahKategori',
+    name: 'tambahKategori',
+    component: tambahKategori
   },
   {
     path: '/Admin/masterBahan/tambahBahan',

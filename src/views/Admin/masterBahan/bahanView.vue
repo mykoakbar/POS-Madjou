@@ -3,12 +3,12 @@
     <sidebarAdmin />
     <div style="padding-left: 300px;">
         <headerDashboard />
+        <h4 class="outside">Bahan</h4>
         <div class="body">
             <div class="card-body py-3">
                 <div class="inside-body">
                     <div class="header-inside-body">
                         <div class="header-inside-body">
-                            <h4>Bahan</h4>
                         </div>
                         <div class="header-inside-body">
                             <form class="d-flex" role="search">
@@ -38,7 +38,7 @@
                             <td><b-icon icon="trash2"></b-icon> <b-icon icon="pencil-fill"></b-icon></td>
                         </tr>
                         <tr>
-                            <th>1</th>
+                            <th>2</th>
                             <td>Cat Besi</td>
                             <td>Cat Besi Warna Kuning</td>
                             <td>5</td>
@@ -86,6 +86,14 @@ export default {
     padding: 0 20px 0 20px;
     width: 100%;
 }
+
+.outside{
+    padding: 0 20px 0 20px;
+    width: 100%;
+    margin-bottom: 35px;
+    margin-top: 80px;
+}
+
 th{
    height: 70px;
 }
