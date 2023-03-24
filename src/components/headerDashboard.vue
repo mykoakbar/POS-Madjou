@@ -63,7 +63,7 @@ export default {
   position: relative;
   top: 7px;
   width: 5%;
-  left: 43px;
+  left: 60px;
 }
 .avatar{
   width: 40px;
